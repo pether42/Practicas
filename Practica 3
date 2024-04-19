@@ -1,0 +1,119 @@
+byte contador = 0, contadors = 0, contadorm = 0, contadorh = 0, contadorb = 0;
+#define entrada(pin) pinMode(pin, INPUT)
+#define salida(pin) pinMode(pin, OUTPUT)
+#define led 13
+#define on(pin) digitalWrite(pin, HIGH)
+#define off(pin) digitalWrite(pin, LOW)
+#define siguiente 2
+#define atras 3
+#define escribir_es Serial.println
+#define pausa delay(1000)
+#define pausacorta delay(250)
+#define escribir Serial.print
+#define leer(pin) digitalRead(pin)
+struct producto
+  {char nombre_producto[50];
+   byte cantidad;
+  };
+ producto producto1 {"Snickers",82};
+ producto producto2 {"MyM",250};
+ producto producto3 {"Hersheys",26};
+ producto producto4 {"Best",120};
+void setup() {
+  Serial.begin(9600);
+  escribir_es("Maquina Expendedora");
+  escribir_es(" ");
+  pausa;
+  entrada(siguiente);
+  entrada(atras);
+  salida(led);
+  
+} 
+void loop()
+{  
+  if (leer(siguiente)==HIGH)
+  { on(led);
+    pausacorta;
+    off(led);
+    if(contador<3) { 
+    contador = contador+1;
+    pausa;
+    }
+   else {
+     escribir_es("Ya esta en el ultimo prodcto");
+     escribir_es(" ");
+     contadorb = 0;
+     
+    }
+  }
+  if (leer(atras)==HIGH)
+  { on(led);
+    pausacorta;
+    off(led);
+    if(contador>0) { 
+    contador = contador-1;
+    pausa;
+    }
+   else {
+     escribir_es("Ya esta en el primer prodcto");
+     escribir_es(" ");
+     contadors = 0;
+     
+    }
+  }  
+  if (contador == 0){ 
+     contadorm = 0;
+     if (contadors == 0){
+    escribir_es("Primer Producto");
+    escribir("El nombre del prodcto es: ");
+    escribir_es(producto1.nombre_producto);
+    pausa;
+    escribir("La cantidad del producto es: ");
+    escribir_es(producto1.cantidad);
+    contadors+= 1;  
+    escribir_es(" ");
+    }
+     }
+    
+  if (contador == 1){ 
+    contadors = 0;
+    contadorh = 0;
+    if (contadorm == 0){
+    escribir_es("Segundo Producto");
+    escribir("El nombre del prodcto es: ");
+    escribir_es(producto2.nombre_producto);
+    pausa;
+    escribir("La cantidad del producto es: ");
+    escribir_es(producto2.cantidad);
+    contadorm+= 1;
+    escribir_es(" ");
+    }
+    }
+  if (contador == 2){ 
+    contadorm = 0;
+    contadorb = 0;
+    if (contadorh == 0){
+    escribir_es("Tercer Producto");  
+    escribir("El nombre del prodcto es: ");
+    escribir_es(producto3.nombre_producto);
+    pausa;
+    escribir("La cantidad del producto es: ");
+    escribir_es(producto3.cantidad);
+    contadorh+= 1;
+    escribir_es(" ");
+    }
+    }
+  if (contador == 3){ 
+    contadorh = 0;
+    if (contadorb == 0){
+    escribir_es("Cuarto Producto");  
+    escribir("El nombre del prodcto es: ");
+    escribir_es(producto4.nombre_producto);
+    pausa;
+    escribir("La cantidad del producto es: ");
+    escribir_es(producto4.cantidad);
+    contadorb+= 1;
+    escribir_es(" ");
+    }
+    }
+}  
