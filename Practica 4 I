@@ -1,0 +1,196 @@
+#define a 2
+#define b 3
+#define c 4
+#define d 5
+#define e 6
+#define f 7
+#define g 8
+#define boton1 9
+#define boton2 10
+#define boton3 11
+#define salida(pin) pinMode(pin, OUTPUT)
+#define entrada(pin) pinMode(pin, INPUT)
+#define on(pin) digitalWrite(pin, HIGH)
+#define off(pin) digitalWrite(pin, LOW)
+#define leer(pin) digitalRead(pin)
+#define on0 on(a); on(b); on(c); on(d); on(e); on(f)
+#define off0 off(a); off(b); off(c); off(d); off(e); off(f)
+#define on1 on(b); on(c)
+#define off1 off(b); off(c)
+#define on2 on(a); on(b); on(d); on(e); on(g)
+#define off2 off(a); off(b); off(d); off(e); off(g)
+#define on3 on(a); on(b); on(c); on(d); on(g)
+#define off3 off(a); off(b); off(c); off(d); off(g)
+#define on4 on(b); on(c); on(f); on(g)
+#define off4 off(b); off(c); off(f); off(g)
+#define on5 on(a); on(c); on(d); on(f); on(g)
+#define off5 off(a); off(c); off(d); off(f); off(g)
+#define on6 on(c); on(d); on(e); on(f); on(g)
+#define off6 off(c); off(d); off(e); off(f); off(g)
+#define on7 on(a); on(b); on(c)
+#define off7 off(a); off(b); off(c)
+#define on8 on(a); on(b); on(c); on(d); on(e); on(f); on(g)
+#define off8 off(a); off(b); off(c); off(d); off(e); off(f); off(g)
+#define on9 on(a); on(b); on(c); on(f); on(g)
+#define off9 off(a); off(b); off(c); off(f); off(g)
+#define pausa0 delay (500)
+#define pausa1 delay (1000)
+#define pausa2 delay (2000)
+#define pausa3 delay (3000)
+
+void setup()
+{
+salida(a);
+salida(b);
+salida(c);
+salida(d);
+salida(e);
+salida(f);
+salida(g);
+entrada(boton1);
+entrada(boton2);
+entrada(boton3);
+}
+
+void loop()
+{
+  if(leer(boton1)==LOW&&leer(boton2)==LOW&&leer(boton3)==LOW||
+     leer(boton1)==HIGH&&leer(boton2)==HIGH&&leer(boton3)==HIGH){
+  on0;
+  pausa0;
+  off0;
+  on1;
+  pausa0;
+  off1;
+  on1;
+  pausa0;
+  off1;
+  on2;
+  pausa0;
+  off2;
+  on3;
+  pausa0;
+  off3;
+  on4;
+  pausa0;
+  off4;
+  on5;
+  pausa0;
+  off5;
+  on6;
+  pausa0;
+  off6;
+  on7;
+  pausa0;
+  off7;
+  on8;
+  pausa0;
+  off8;
+  on9;
+  pausa0;
+    off9;}
+  if(leer(boton1)==HIGH&&leer(boton2)==LOW&&leer(boton3)==LOW){
+    on0;
+  pausa1;
+  off0;
+  on1;
+  pausa1;
+  off1;
+  on1;
+  pausa1;
+  off1;
+  on2;
+  pausa1;
+  off2;
+  on3;
+  pausa1;
+  off3;
+  on4;
+  pausa1;
+  off4;
+  on5;
+  pausa1;
+  off5;
+  on6;
+  pausa1;
+  off6;
+  on7;
+  pausa1;
+  off7;
+  on8;
+  pausa1;
+  off8;
+  on9;
+  pausa1;
+  off9;}
+if(leer(boton1)==LOW&&leer(boton2)==HIGH&&leer(boton3)==LOW){
+    on0;
+  pausa2;
+  off0;
+  on1;
+  pausa2;
+  off1;
+  on1;
+  pausa2;
+  off1;
+  on2;
+  pausa2;
+  off2;
+  on3;
+  pausa2;
+  off3;
+  on4;
+  pausa2;
+  off4;
+  on5;
+  pausa2;
+  off5;
+  on6;
+  pausa2;
+  off6;
+  on7;
+  pausa2;
+  off7;
+  on8;
+  pausa2;
+  off8;
+  on9;
+  pausa2;
+  off9;}
+ if(leer(boton1)==LOW&&leer(boton2)==LOW&&leer(boton3)==HIGH){
+    on0;
+  pausa3;
+  off0;
+  on1;
+  pausa3;
+  off1;
+  on1;
+  pausa3;
+  off1;
+  on2;
+  pausa3;
+  off2;
+  on3;
+  pausa3;
+  off3;
+  on4;
+  pausa3;
+  off4;
+  on5;
+  pausa3;
+  off5;
+  on6;
+  pausa3;
+  off6;
+  on7;
+  pausa3;
+  off7;
+  on8;
+  pausa3;
+  off8;
+  on9;
+  pausa3;
+  off9;}
+  
+
+}
