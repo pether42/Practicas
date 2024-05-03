@@ -1,0 +1,86 @@
+#define led1 2
+#define led2 3
+#define led3 4
+#define led4 5
+#define led5 6
+#define led6 7
+#define boton1 8
+#define boton2 9
+#define salida(pin) pinMode(pin, OUTPUT)
+#define entrada(pin) pinMode(pin, INPUT)
+#define leer(pin) digitalRead(pin)
+#define on(pin) digitalWrite(pin, HIGH)
+#define off(pin) digitalWrite(pin, LOW)
+#define pausa1 delay(500)
+#define pausa2 delay(250)
+#define ida1 on(led1); pausa1; off(led1); on(led2); pausa1; off(led2); on(led3);pausa1; off(led3); on(led4); pausa1; off(led4); on(led5); pausa1; off(led5); on(led6); pausa1; off(led6)
+#define regreso1 on(led6); pausa1; off(led6); on(led5); pausa1; off(led5); on(led4);pausa1; off(led4); on(led3); pausa1; off(led3); on(led2); pausa1; off(led2); on(led1); pausa1; off(led1)
+#define onall on(led1); on(led2); on(led3); on(led4); on(led5); on(led6) 
+#define offall off(led1); off(led2); off(led3); off(led4); off(led5); off(led6)
+#define ida2 on(led1); pausa2; off(led1); on(led2); pausa2; off(led2); on(led3); pausa2; off(led3); on(led4); pausa2; off(led4); on(led5); pausa2; off(led5); on(led6); pausa2; off(led6)
+#define regreso2 on(led6); pausa2; off(led6); on(led5); pausa2; off(led5); on(led4); pausa2; off(led4); on(led3); pausa2; off(led3); on(led2); pausa2; off(led2); on(led1); pausa2; off(led1)
+
+void setup()
+{
+  salida(led1);
+  salida(led2);
+  salida(led3);
+  salida(led4);
+  salida(led5);
+  salida(led6); 
+  entrada(boton1);
+  entrada(boton2);
+}
+
+void loop()
+{
+  if(leer(boton1)==HIGH){
+   ida1;  
+   regreso1;
+   ida1;  
+   regreso1;
+   ida1;  
+   regreso1;
+   onall;
+   pausa1; 
+   offall;
+   pausa1;
+   onall;
+   pausa1; 
+   offall;
+   pausa1; 
+   onall;
+   pausa1; 
+   offall;
+   pausa1;
+   onall;
+   pausa1; 
+   offall;
+  }
+  
+   if(leer(boton2)==HIGH){
+   ida2;  
+   regreso2;
+   ida2;  
+   regreso2;
+   ida2;  
+   regreso2;
+   onall;
+   pausa2; 
+   offall;
+   pausa2;
+   onall;
+   pausa2; 
+   offall;
+   pausa2; 
+   onall;
+   pausa2; 
+   offall;
+   pausa2;
+   onall;
+   pausa2; 
+   offall;
+  }
+  
+ 
+}
