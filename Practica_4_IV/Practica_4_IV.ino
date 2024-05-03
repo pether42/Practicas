@@ -77,12 +77,10 @@ void loop()
     off1_1;
     pausa;}
   if(i==1){
-    i=1;
     on1_1;
     off1_2;
     pausa;}
   if(i==2){
-    i=2;
     off1_1;
     off1_3;
     on1_2;
