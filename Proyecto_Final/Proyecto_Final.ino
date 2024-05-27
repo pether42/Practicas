@@ -36,7 +36,7 @@
 LiquidCrystal_I2C lcd(0x27,16,2);
 Servo servo;
 
-byte i = 0, b = 0, c = 0;
+byte c = 0;
 
 char keys[4][4] = {
   {'1','2','3','A'},
